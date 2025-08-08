@@ -19,9 +19,9 @@
     ...
   } @ inputs: let
     system = "x86_64-linux";
-  in {
-    nixosConfigurations = {
-      jack = nixpkgs.lib.nixosSystem {
+
+    createSystem = name:
+      nixpkgs.lib.nixosSystem {
         inherit system;
         specialArgs = inputs;
 
@@ -29,33 +29,46 @@
           [
             inputs.home-manager.nixosModules.home-manager
             ./configuration.nix
-            ./hosts/jack/jack.nix
+            ./hosts/${name}/${name}.nix
           ]
           ++ (with self.nixosModules; [
-            gnome
-            yggdrasil
+            ryan
+            kevin
+
             ssh
+            gnome
+            systemd-boot
+            grub
+            yggdrasil
             arm
             jellyfin
-            kevin
-            ryan
           ]);
       };
+  in {
+    nixosConfigurations = {
+      jack = createSystem "jack";
+      laptop = createSystem "laptop";
     };
 
     nixosModules = {
-      yggdrasil = import ./modules/nixos/yggdrasil.nix;
+      ryan = import ./modules/users/ryan/ryan.nix;
+      kevin = import ./modules/users/kevin.nix;
+
       ssh = import ./modules/nixos/ssh.nix;
+      gnome = import ./modules/nixos/gnome.nix;
+      systemd-boot = import ./modules/nixos/systemd-boot.nix;
+      grub = import ./modules/nixos/grub.nix;
+      yggdrasil = import ./modules/nixos/yggdrasil.nix;
       arm = import ./modules/nixos/arm/arm.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
-      gnome = import ./modules/nixos/gnome.nix;
-      kevin = import ./modules/users/kevin.nix;
-      ryan = import ./modules/users/ryan/ryan.nix;
     };
 
     homeModules = {
       zed = import ./modules/home/zed.nix;
       firefox = import ./modules/home/firefox.nix;
+      git = import ./modules/home/git.nix;
+      helix = import ./modules/home/helix.nix;
+      gnome = import ./modules/home/gnome.nix;
     };
 
     homeConfigurations = {

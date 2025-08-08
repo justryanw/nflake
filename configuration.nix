@@ -5,11 +5,6 @@
 }: let
   locale = "en_GB.UTF-8";
 in {
-  boot.loader = {
-    systemd-boot.enable = true;
-    efi.canTouchEfiVariables = true;
-  };
-
   users.groups.media = {
     gid = 1001;
     members = ["ryan kevin"];

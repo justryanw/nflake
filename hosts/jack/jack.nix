@@ -6,6 +6,7 @@
       kevin.enable = true;
       ryan.enable = true;
     };
+    systemd-boot.enable = true;
     gnome.enable = true;
     yggdrasil.enable = true;
     ssh.enable = true;
