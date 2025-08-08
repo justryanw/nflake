@@ -9,6 +9,7 @@
     ../../home/git.nix
     ../../home/helix.nix
     ../../home/gnome.nix
+    ../../home/ssh.nix
   ];
 
   modules = {
@@ -17,6 +18,7 @@
     zed.enable = true;
     helix.enable = true;
     gnome.enable = true;
+    ssh.enable = true;
   };
 
   home = {

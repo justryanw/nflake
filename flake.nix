@@ -69,6 +69,7 @@
       git = import ./modules/home/git.nix;
       helix = import ./modules/home/helix.nix;
       gnome = import ./modules/home/gnome.nix;
+      ssh = import ./modules/home/ssh.nix;
     };
 
     homeConfigurations = {
