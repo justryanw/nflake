@@ -13,7 +13,18 @@ in {
     programs.git = {
       enable = true;
       userName = "Ryan Walker";
-      userEmail = "ryanjwalker2001@gmail.com";
+      userEmail = "git@ryanjw.net";
+      extraConfig = {
+        pull.rebase = true;
+        rebase.autoStash = true;
+        submodule.recurse = true;
+        push.recurseSubmodules = "on-demand";
+      };
+      aliases = {
+        a = "!git add -A";
+        ac = "!git add -A && git commit";
+        acm = "!git add -A && git commit -m";
+      };
     };
   };
 }
