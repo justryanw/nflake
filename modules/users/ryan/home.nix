@@ -10,6 +10,7 @@
     ../../home/helix.nix
     ../../home/gnome.nix
     ../../home/ssh.nix
+    ../../home/zsh.nix
   ];
 
   modules = {
@@ -19,6 +20,7 @@
     helix.enable = true;
     gnome.enable = true;
     ssh.enable = true;
+    zsh.enable = true;
   };
 
   home = {
@@ -30,9 +32,9 @@
   };
 
   programs = {
-    zsh.enable = true;
     starship.enable = true;
     zellij.enable = true;
     btop.enable = true;
+    carapace.enable = true;
   };
 }

@@ -38,6 +38,19 @@ in {
         color-scheme = "prefer-dark";
         enable-hot-corners = false;
       };
+      "org/gnome/desktop/input-sources" = {
+        xkb-options = ["caps:escape"];
+        sources = [
+          (lib.hm.gvariant.mkTuple [
+            "xkb"
+            "gb"
+          ])
+        ];
+      };
+      "org/gnome/desktop/peripherals/touchpad" = {
+        tap-to-click = true;
+        natural-scroll = false;
+      };
     };
   };
 }

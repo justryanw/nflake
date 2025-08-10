@@ -42,6 +42,7 @@
             yggdrasil
             arm
             jellyfin
+            zerotier
           ]);
       };
   in {
@@ -61,6 +62,7 @@
       yggdrasil = import ./modules/nixos/yggdrasil.nix;
       arm = import ./modules/nixos/arm/arm.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
+      zerotier = import ./modules/nixos/zerotier.nix;
     };
 
     homeModules = {
@@ -70,6 +72,7 @@
       helix = import ./modules/home/helix.nix;
       gnome = import ./modules/home/gnome.nix;
       ssh = import ./modules/home/ssh.nix;
+      zsh = import ./modules/home/zsh.nix;
     };
 
     homeConfigurations = {

@@ -5,7 +5,7 @@
     users.ryan.enable = true;
     ssh.enable = true;
     gnome.enable = true;
-    grub.enable = false;
+    zerotier.enable = true;
   };
 
   system.stateVersion = "22.11";
