@@ -41,6 +41,18 @@ in {
       alsa.support32Bit = true;
       pulse.enable = true;
     };
+
+    avahi = {
+      enable = true;
+      nssmdns4 = true;
+      openFirewall = true;
+      publish = {
+        enable = true;
+        addresses = true;
+      };
+    };
+
+    printing.enable = true;
   };
 
   security.rtkit.enable = true;
