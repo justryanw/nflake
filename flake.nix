@@ -11,6 +11,11 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -27,51 +32,44 @@
 
         modules =
           [
-            inputs.home-manager.nixosModules.home-manager
             ./configuration.nix
             ./hosts/${name}/${name}.nix
           ]
-          ++ (with self.nixosModules; [
-            ryan
-            kevin
-
-            ssh
-            gnome
-            systemd-boot
-            grub
-            yggdrasil
-            arm
-            jellyfin
-            zerotier
-          ]);
+          ++ (with inputs; [
+            home-manager.nixosModules.home-manager
+            disko.nixosModules.default
+          ])
+          ++ (builtins.attrValues self.nixosModules);
       };
   in {
     nixosConfigurations = {
       jack = createSystem "jack";
       laptop = createSystem "laptop";
+      desktop = createSystem "desktop";
     };
 
     nixosModules = {
       ryan = import ./modules/users/ryan/ryan.nix;
       kevin = import ./modules/users/kevin.nix;
 
-      ssh = import ./modules/nixos/ssh.nix;
-      gnome = import ./modules/nixos/gnome.nix;
-      systemd-boot = import ./modules/nixos/systemd-boot.nix;
-      grub = import ./modules/nixos/grub.nix;
-      yggdrasil = import ./modules/nixos/yggdrasil.nix;
       arm = import ./modules/nixos/arm/arm.nix;
+      disko = import ./modules/nixos/disko.nix;
+      gnome = import ./modules/nixos/gnome.nix;
+      grub = import ./modules/nixos/grub.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
+      ssh = import ./modules/nixos/ssh.nix;
+      systemd-boot = import ./modules/nixos/systemd-boot.nix;
+      yggdrasil = import ./modules/nixos/yggdrasil.nix;
       zerotier = import ./modules/nixos/zerotier.nix;
     };
 
     homeModules = {
-      zed = import ./modules/home/zed.nix;
       firefox = import ./modules/home/firefox.nix;
       git = import ./modules/home/git.nix;
-      helix = import ./modules/home/helix.nix;
       gnome = import ./modules/home/gnome.nix;
+      helix = import ./modules/home/helix.nix;
       ssh = import ./modules/home/ssh.nix;
+      zed = import ./modules/home/zed.nix;
       zsh = import ./modules/home/zsh.nix;
     };
 

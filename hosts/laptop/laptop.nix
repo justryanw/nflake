@@ -8,8 +8,8 @@
     zerotier.enable = true;
   };
 
-  system.stateVersion = "22.11";
   networking.hostName = "laptop";
+  system.stateVersion = "22.11";
 
   boot.loader.grub.device = "nodev";
 
