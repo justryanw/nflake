@@ -12,15 +12,12 @@ in {
 
   config = lib.mkIf cfg.enable {
     services = {
-      xserver = {
+      displayManager.gdm = {
+        autoSuspend = false;
         enable = true;
-        displayManager.gdm = {
-          autoSuspend = false;
-          enable = true;
-        };
-        desktopManager.gnome.enable = true;
-        excludePackages = with pkgs; [xterm];
       };
+      desktopManager.gnome.enable = true;
+      xserver.excludePackages = with pkgs; [xterm];
     };
 
     environment = {
