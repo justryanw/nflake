@@ -8,6 +8,7 @@
     disko.enable = true;
     zerotier.enable = true;
     systemd-boot.enable = true;
+    steam.enable = true;
   };
 
   networking.hostName = "desktop";

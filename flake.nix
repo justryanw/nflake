@@ -58,6 +58,7 @@
       grub = import ./modules/nixos/grub.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
       ssh = import ./modules/nixos/ssh.nix;
+      steam = import ./modules/nixos/steam.nix;
       systemd-boot = import ./modules/nixos/systemd-boot.nix;
       yggdrasil = import ./modules/nixos/yggdrasil.nix;
       zerotier = import ./modules/nixos/zerotier.nix;

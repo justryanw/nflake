@@ -6,6 +6,7 @@
     ssh.enable = true;
     gnome.enable = true;
     zerotier.enable = true;
+    steam.enable = true;
   };
 
   networking.hostName = "laptop";

@@ -12,9 +12,11 @@
     ssh.enable = true;
     arm.enable = true;
     jellyfin.enable = true;
+    zerotier.enable = true;
   };
 
   networking.hostName = "jack";
+  system.stateVersion = "25.05";
 
   fileSystems = {
     "/data" = {
@@ -22,6 +24,4 @@
       fsType = "btrfs";
     };
   };
-
-  system.stateVersion = "25.05";
 }
