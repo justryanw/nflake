@@ -16,6 +16,11 @@
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    copyparty = {
+      url = "github:9001/copyparty";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -38,6 +43,8 @@
           ++ (with inputs; [
             home-manager.nixosModules.home-manager
             disko.nixosModules.default
+            copyparty.nixosModules.default
+            ({...}: {nixpkgs.overlays = [copyparty.overlays.default];})
           ])
           ++ (builtins.attrValues self.nixosModules);
       };
