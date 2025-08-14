@@ -63,6 +63,7 @@
       disko = import ./modules/nixos/disko.nix;
       gnome = import ./modules/nixos/gnome.nix;
       grub = import ./modules/nixos/grub.nix;
+      iperf = import ./modules/nixos/iperf.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
       ssh = import ./modules/nixos/ssh.nix;
       steam = import ./modules/nixos/steam.nix;

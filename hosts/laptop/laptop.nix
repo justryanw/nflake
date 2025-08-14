@@ -7,6 +7,7 @@
     gnome.enable = true;
     zerotier.enable = true;
     steam.enable = true;
+    iperf.enable = true;
   };
 
   networking.hostName = "laptop";

@@ -12,6 +12,7 @@
     arm.enable = true;
     jellyfin.enable = true;
     zerotier.enable = true;
+    iperf.enable = true;
   };
 
   networking.hostName = "jack";

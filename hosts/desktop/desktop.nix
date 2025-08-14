@@ -9,6 +9,7 @@
     zerotier.enable = true;
     systemd-boot.enable = true;
     steam.enable = true;
+    iperf.enable = true;
   };
 
   networking.hostName = "desktop";
