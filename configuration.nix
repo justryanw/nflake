@@ -32,6 +32,8 @@ in {
 
   console.keyMap = "uk";
 
+  boot.plymouth.enable = true;
+
   services = {
     xserver.xkb.layout = "gb";
 
