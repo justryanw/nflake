@@ -8,7 +8,6 @@
     };
     systemd-boot.enable = true;
     gnome.enable = true;
-    yggdrasil.enable = true;
     ssh.enable = true;
     arm.enable = true;
     jellyfin.enable = true;
@@ -24,4 +23,11 @@
       fsType = "btrfs";
     };
   };
+
+  swapDevices = [
+    {
+      device = "/swapfile";
+      size = 32 * 1024;
+    }
+  ];
 }

@@ -29,6 +29,7 @@
     packages = with pkgs; [
       tldr
       discord
+      signal-desktop
     ];
   };
 
