@@ -28,6 +28,7 @@
 
     packages = with pkgs; [
       tldr
+      iperf
       discord
       signal-desktop
     ];
