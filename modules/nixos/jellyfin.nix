@@ -16,18 +16,6 @@ in {
         group = "media";
         openFirewall = true;
       };
-      homepage-dashboard.services = [
-        {
-          Media = [
-            {
-              Jellyfin = {
-                icon = "jellyfin.png";
-                href = "http://${config.networking.hostName}.local:8096";
-              };
-            }
-          ];
-        }
-      ];
     };
   };
 }

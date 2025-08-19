@@ -80,18 +80,5 @@ in {
         autoStart = true;
       };
     };
-
-    services.homepage-dashboard.services = [
-      {
-        Media = [
-          {
-            Arm = {
-              # icon = "jellyfin.png";
-              href = "http://${config.networking.hostName}.local:8080";
-            };
-          }
-        ];
-      }
-    ];
   };
 }

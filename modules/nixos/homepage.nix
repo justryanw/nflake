@@ -32,6 +32,23 @@ in {
             };
           }
         ];
+        services = [
+          {
+            Media = [
+              {
+                Jellyfin = lib.mkIf config.modules.jellyfin.enable {
+                  icon = "jellyfin.png";
+                  href = "http://${config.networking.hostName}.local:8096";
+                };
+              }
+              {
+                Arm = lib.mkIf config.modules.arm.enable {
+                  href = "http://${config.networking.hostName}.local:8080";
+                };
+              }
+            ];
+          }
+        ];
       };
       caddy = {
         enable = true;
