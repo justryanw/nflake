@@ -19,6 +19,6 @@
         RemainAfterExit = "no";
       };
     };
+    networking.firewall.allowedTCPPorts = [61208];
   };
-  networking.firewall.allowedTCPPorts = [61208];
 }
