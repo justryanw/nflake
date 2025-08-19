@@ -48,6 +48,15 @@ in {
               }
             ];
           }
+          {
+            Monitoring = [
+              {
+                Glances = lib.mkIf config.modules.glances.enable {
+                  href = "http://${config.networking.hostName}.local:61208";
+                };
+              }
+            ];
+          }
         ];
       };
       caddy = {

@@ -14,6 +14,7 @@
     zerotier.enable = true;
     iperf.enable = true;
     homepage.enable = true;
+    glances.enable = true;
   };
 
   networking.hostName = "jack";

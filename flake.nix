@@ -61,6 +61,7 @@
 
       arm = import ./modules/nixos/arm/arm.nix;
       disko = import ./modules/nixos/disko.nix;
+      glances = import ./modules/nixos/glances.nix;
       gnome = import ./modules/nixos/gnome.nix;
       grub = import ./modules/nixos/grub.nix;
       homepage = import ./modules/nixos/homepage.nix;
