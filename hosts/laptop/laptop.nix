@@ -8,6 +8,7 @@
     zerotier.enable = true;
     steam.enable = true;
     iperf.enable = true;
+    homepage.enable = true;
   };
 
   networking.hostName = "laptop";

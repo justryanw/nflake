@@ -13,6 +13,7 @@
     jellyfin.enable = true;
     zerotier.enable = true;
     iperf.enable = true;
+    homepage.enable = true;
   };
 
   networking.hostName = "jack";
