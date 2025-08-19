@@ -41,6 +41,7 @@ in {
           '';
         };
       };
+      networking.firewall.allowedTCPPorts = [80];
     };
   };
 }
