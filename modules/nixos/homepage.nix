@@ -13,7 +13,7 @@ in {
     services = {
       homepage-dashboard = {
         enable = true;
-        allowedHosts = "localhost,${config.networking.hostName}.local,127.0.0.1";
+        allowedHosts = "*";
         widgets = [
           {
             resources = {
