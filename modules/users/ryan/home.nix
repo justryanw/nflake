@@ -31,6 +31,7 @@
       iperf
       discord
       signal-desktop
+      dysk
     ];
   };
 
