@@ -14,7 +14,8 @@ in {
       immich = {
         enable = true;
         mediaLocation = "/data/immich";
-        host = "*";
+        openFirewall = true;
+        host = "0.0.0.0";
       };
     };
   };
