@@ -65,6 +65,7 @@
       gnome = import ./modules/nixos/gnome.nix;
       grub = import ./modules/nixos/grub.nix;
       homepage = import ./modules/nixos/homepage.nix;
+      immich = import ./modules/nixos/immich.nix;
       iperf = import ./modules/nixos/iperf.nix;
       jellyfin = import ./modules/nixos/jellyfin.nix;
       ssh = import ./modules/nixos/ssh.nix;

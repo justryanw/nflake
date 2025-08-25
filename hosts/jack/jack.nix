@@ -15,6 +15,7 @@
     iperf.enable = true;
     homepage.enable = true;
     glances.enable = true;
+    immich.enable = true;
   };
 
   networking.hostName = "jack";
@@ -32,5 +33,9 @@
       device = "/swapfile";
       size = 32 * 1024;
     }
+  ];
+
+  systemd.tmpfiles.rules = [
+    "d /data/immich 775 immich media"
   ];
 }
